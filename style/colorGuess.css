@@ -15,6 +15,14 @@ body{
 h1{
 	color: white;
 }
-span{
-	color:white;
+
+#small-row{
+	background-color: white;
+	height: 30px;
+	text-align: center;
+	border-radius: 4px;
+	color: black;
+}
+.selected-button{
+	background: blue;
 }
