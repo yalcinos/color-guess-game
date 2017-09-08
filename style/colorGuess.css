@@ -65,3 +65,14 @@ button{
 button:hover{
 	color:white;
 	background-color:#6edfb5;
+}
+.fa-heart{
+	color: red;	
+}
+.fa-trophy{
+	color:yellow;
+	display: initial;
+}
+#legend{
+	display: initial;
+}

@@ -10,11 +10,10 @@ var h1=document.querySelector("h1");
 var easyButton=document.querySelector("#easyButton");
 var hardButton=document.querySelector("#hardButton");
 var header=document.querySelector(".header");
-
-
+var heart=document.getElementById("heartcount");
+var score=document.getElementById("highscore");
 
 colorDisplay.textContent=colorpicked+"=?";
-
 
 for(var i=0; i<squares.length; i++){
 	squares[i].style.backgroundColor=colors[i];
@@ -53,7 +52,6 @@ easyButton.addEventListener("click",function(){
 			squares[i].style.display="none";
 		}	
 	}
-
 	header.style.backgroundColor="#6edfb5";
 	resultDisplay.textContent="";
 });
@@ -93,6 +91,7 @@ resetButton.addEventListener("click",function(){
 	for(var i=0; i<squares.length; i++){
 		squares[i].style.backgroundColor=colors[i];
 	}
+	
 	header.style.backgroundColor="#6edfb5";
 	resultDisplay.textContent="";
 	resetButton.textContent="New Color";
