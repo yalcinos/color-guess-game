@@ -24,6 +24,7 @@ for(var i=0; i<squares.length; i++){
 		if(clickedColor===colorpicked){
 			resultDisplay.textContent="Correct!";
 			changeColorOfSquares();
+			//calculateHighScore();
 			resetButton.textContent="Play Again ?";
 			header.style.backgroundColor=colorpicked;
 		}
@@ -31,8 +32,14 @@ for(var i=0; i<squares.length; i++){
 		{
 			this.style.backgroundColor="#232323";
 			resultDisplay.textContent="Try Again!"; 
+			heartCount();
 		}
 	});
+}
+if(resultDisplay.textContent==="Correct!")
+{
+	var scorecount=0;
+	score.textContent=scorecount+100;
 }
 
 easyButton.addEventListener("click",function(){
@@ -48,6 +55,7 @@ easyButton.addEventListener("click",function(){
 		if(colors[i])
 		{
 			squares[i].style.backgroundColor=colors[i];
+			
 		} else{
 			squares[i].style.display="none";
 		}	
@@ -91,7 +99,7 @@ resetButton.addEventListener("click",function(){
 	for(var i=0; i<squares.length; i++){
 		squares[i].style.backgroundColor=colors[i];
 	}
-	
+
 	header.style.backgroundColor="#6edfb5";
 	resultDisplay.textContent="";
 	resetButton.textContent="New Color";
@@ -121,4 +129,22 @@ function randomColors(number)
 	}
 	return colorArray;
 }
+function heartCount()
+{
+	var heal=heart.textContent-1;
+	heart.textContent=heal;
+	if(heal===0){
+		alert("GAME OVER!");
+		heart.textContent=10;
+		changeColorOfSquares();
+		pickColorAction();
+		randomColors(6);
 
+	}
+}
+// function calculateHighScore()
+// {
+// 	var scoretable=score.textContent+100;
+// 	score.textContent=scoretable;
+	
+// }
